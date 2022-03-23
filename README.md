@@ -1,6 +1,6 @@
-# e_sinav
+# bil_bakalim
 
-Elektronik Sınav Uygulaması
+
 
 ## Getting Started
 
