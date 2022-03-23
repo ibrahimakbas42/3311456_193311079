@@ -1,0 +1,17 @@
+ 'Nemrut Dağı - Adıyaman',
+ 'Amasra Kasabası - Bartın',
+ 'Amasya Evleri - Amasya',
+ 'Şirince Kasabası - İzmir',
+ 'Gökçeada - Çanakkale'
+
+ 'Tortum Şelalesi - Erzurum',
+ 'Alaçatı - İzmir',
+ 'Ölüdeniz - Muğla',
+ 'Saklıkent - Antalya',
+ 'Adalar - İstanbul'
+
+ 'Sille - Konya',
+ 'Kapadokya - Nevşehir',
+ 'Harran - Şanlıurfa',
+ 'Pamukkale - Denizli',
+ 'Aspendos - Antalya'
