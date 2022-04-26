@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294600457867",
+    "project_id": "bilbakalim-79e8d",
+    "storage_bucket": "bilbakalim-79e8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294600457867:android:0384cf2b5d9fab6fe49e8e",
+        "android_client_info": {
+          "package_name": "com.example.bil_bakalim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294600457867-ariphslbcddema4krq93vs4hrd74ka2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4c2AOgPWHLfJkjf10HdtKhf7wP8qdUl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294600457867-ariphslbcddema4krq93vs4hrd74ka2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

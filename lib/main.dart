@@ -10,6 +10,15 @@ import 'sorular/bitir.dart';
 import 'hakkinda/hakkinda.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'hakkinda/yemek.dart';
+import 'grafik/LineChartSample1.dart';
+import 'grafik/linechartsample2.dart';
+import 'sqllite/todo.dart';
+import 'gestures/jestler.dart';
+import 'api/api.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firestore/firestore.dart';
+import 'tarifler/home.dart';
+import 'animation/animationn.dart';
 
 void main() {
   runApp(BenimUyg());
@@ -24,6 +33,7 @@ class BenimUyg extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // home: SplashScreen(),
       initialRoute: '/',
       routes: {
         '/': (context) => MyHomePage(),
@@ -35,10 +45,36 @@ class BenimUyg extends StatelessWidget {
         '/foto2': (context) => Foto2(),
         '/yemek': (context) => Yemek(),
         '/olaylar': (context) => Olaylar(),
+        '/grafik': (context) => LineChartSample1(),
+        '/grafik2': (context) => LineChartSample2(),
+        '/todo': (context) => Todo(),
+        '/jestler': (context) => Jestler(),
+        '/api': (context) => Api(),
+        '/firestore': (context) => Firestore(),
+        '/tarifler': (context) => HomePage(),
+        '/animation': (context) => SplashScreen(),
       },
     );
   }
 }
+
+// class SplashScreen extends StatelessWidget {
+//   //const SplashScreen({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     // var PageTransitionType;
+//     return AnimatedSplashScreen(
+//       splash: Lottie.asset('assets/images/loader.json'),
+//       nextScreen: SplashScreen(),
+//       splashIconSize: 600,
+//       duration: 4000,
+//       splashTransition: SplashTransition.fadeTransition,
+//       // pageTransitionType: PageTransitionType.topToBottom,
+//       animationDuration: /*const*/ Duration(seconds: 1),
+//     );
+//   }
+// }
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -190,14 +226,40 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPrimary: Colors.white, // foreground
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Hakkinda()),
-                    );
+                    Navigator.pushNamed(context, '/animation');
                   },
-                  child: Text('Hakkında'),
+                  // onPressed: () {
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(builder: (context) => Hakkinda()),
+                  //   );
+                  // },
+                  child: Text(
+                    'Çeşitli Uygulamalar İçin Tıklayınız',
+                    style:
+                        GoogleFonts.anton(fontSize: 20.0, color: Colors.white),
+                  ),
                 ),
               ),
+              // Container(
+              //   margin: EdgeInsets.symmetric(
+              //     horizontal: 45.0,
+              //   ),
+              //   //padding: const EdgeInsets.symmetric(vertical: 8.0),
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       primary: Colors.cyan, // background
+              //       onPrimary: Colors.white, // foreground
+              //     ),
+              //     onPressed: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(builder: (context) => Animasyon()),
+              //       );
+              //     },
+              //     child: Text('Animasyon'),
+              //   ),
+              // ),
             ],
           ),
         ),

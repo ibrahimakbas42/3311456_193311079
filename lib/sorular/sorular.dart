@@ -1,9 +1,10 @@
-//import 'dart:convert';
 import 'dart:async';
 
-import 'package:e_sinav/sorular/bitir.dart';
+import 'package:bil_bakalim/sorular/bitir.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'bitir.dart';
 
 class Sorular extends StatefulWidget {
   @override
@@ -19,16 +20,20 @@ String zamaniFormatla(int milisaniye) {
 }
 
 class _SorularState extends State<Sorular> {
-  String adSoyad = '';
-  String ogrNo = '';
+  // String adSoyad = '';
+  // String ogrNo = '';
+  String? adSoyad;
+  String? ogrNo;
 
   int mevcutsoru = 0;
   String mevcutcevap = '';
   int puan = 0;
   int kullanilansure = 0;
 
-  Stopwatch _sayac;
-  Timer _timer;
+  late Stopwatch _sayac;
+  late Timer _timer;
+
+  Object? data;
 
   @override
   void initState() {
@@ -51,8 +56,8 @@ class _SorularState extends State<Sorular> {
 
   void BitireYolla() {
     var data = [];
-    data.add(adSoyad);
-    data.add(ogrNo);
+    data.add(adSoyad) as String;
+    data.add(ogrNo.toString());
     data.add(puan.toString());
     data.add(zamaniFormatla(kullanilansure));
     Navigator.push(
@@ -154,10 +159,12 @@ class _SorularState extends State<Sorular> {
 
   @override
   Widget build(BuildContext context) {
-    var data = [];
-    data = ModalRoute.of(context).settings.arguments;
-    adSoyad = data[0];
-    ogrNo = data[1];
+    Object? data = [];
+    data = ModalRoute.of(context)!.settings.arguments;
+    // adSoyad = data[0];
+    // ogrNo = data[1];
+    adSoyad = ['adSoyad'] as String;
+    ogrNo = ['ogrNo'] as String;
 
     _sayac.start();
     if (_sayac.elapsedMilliseconds > 9999 && mevcutsoru < 9) {
@@ -177,9 +184,17 @@ class _SorularState extends State<Sorular> {
     }
 
     List cevaplistesi = [];
-    for (var u in sorular[mevcutsoru]['cevaplar']) {
-      cevaplistesi.add(u);
+    if (sorular.isNotEmpty) {
+      for (var u in sorular /*[mevcutsoru]['cevaplar']*/) {
+        // Cevaplistesi cevaplistesi = Cevaplistesi(
+        // sorular[mevcutsoru];
+        // sorular('cevaplar');
+        cevaplistesi.add(u);
+      }
     }
+    // for (var u in sorular![mevcutsoru]['cevaplar']) {
+    //   cevaplistesi.add(u);
+    // }
 
     return Scaffold(
       backgroundColor: Colors.grey[350],
@@ -192,8 +207,8 @@ class _SorularState extends State<Sorular> {
               style:
                   GoogleFonts.pacifico(fontSize: 25.0, color: Colors.cyan[400]),
             ),
-            Text('Ad-Soyad: ' + adSoyad, style: TextStyle(fontSize: 15.0)),
-            Text('Öğrenci No: ' + ogrNo, style: TextStyle(fontSize: 15.0)),
+            Text('Ad-Soyad: ' + adSoyad!, style: TextStyle(fontSize: 15.0)),
+            Text('Öğrenci No: ' + ogrNo!, style: TextStyle(fontSize: 15.0)),
             Text(
               'Mevcut Soru /Toplam Soru: ' +
                   mevcutsoru.toString() +
