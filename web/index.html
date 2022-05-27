@@ -20,16 +20,39 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="e_sinav">
+  <meta name="apple-mobile-web-app-title" content="bilbakalim">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>e_sinav</title>
+  <title>bilbakalim</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBI_xEAN7P1DvXxF41mceu9tZyheJWYVa8",
+    authDomain: "bilbakalim-79e8d.firebaseapp.com",
+    projectId: "bilbakalim-79e8d",
+    storageBucket: "bilbakalim-79e8d.appspot.com",
+    messagingSenderId: "294600457867",
+    appId: "1:294600457867:web:23ce24b8404556d2e49e8e",
+    measurementId: "G-DYZXJ200CX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
